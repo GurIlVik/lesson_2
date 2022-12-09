@@ -23,22 +23,18 @@ def oper_system_macintosh(directory, criteria):
                 list_files.append(list1)
                 list1 = []
     result = sorted_list(list_files, criteria)
-    print(result)
-    
-    print(121)
-    ...
-
-#     /Users/manager/Documents/Илья/СКАН
+    return result
 
 def start_program():
     directory = input('Введите путь к папке: \n')
-    criteria = 1
     criteria = int(input(f'''Введите: 
     1 - сортировка по имени
     2 - сортировка по размеру 
     3 - без сортировки \n'''))
 
-    oper_system_macintosh(directory, criteria)
+    list_for_print = oper_system_macintosh(directory, criteria)
+    for elem in list_for_print:
+        print(f'файл - {elem[0]} размер: {elem[1]}')
 
 if __name__ == '__main__':
     start_program()
